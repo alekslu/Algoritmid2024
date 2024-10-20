@@ -1,0 +1,31 @@
+1. Raamatute järjestamise algoritm
+
+Ülesanne on luua selge ja lühike kirjalik algoritm, mis kirjeldab raamatute riiulil
+korraldamise samme nende kõrguse põhjal.
+
+Piirangud:
+Eeldage, et saate raamatu kõrgust vaadates kindlaks määrata.
+Arvestage, et riiulil on fikseeritud pikkus ja see mahutab kõik raamatud.
+
+Pseudokood:
+Koodi algus:
+//Esiteks on meil n kogus raamatuid
+n = len(raamatud)
+
+//Need n-raamatut tuleb kõrguse järgi panna ritta
+for i=1 kuni n: // hakkan ükshaaval läbi käima raamatuid kuni n-raamatut on läbi käidud
+    v2ikseim = i // hetkel vaadeldav väikseima kõrgusega raamat (index viitab asukohale, ehk peaks jääma võrreldavate objektide vahel lõpuks ettepoole) 
+    for j on i + 1 kuni n //vaatame järgmist elementi/raamatut
+        Kui raamatud[j] < raamatud[v2ikseim]: //kui kohal j raamat on väiksem kui varem defineeritud v2ikseim, siis määrata väikseimaks hoopis j
+            v2ikseim = j
+    // Ülevalolev for loopid käivad seni kuni kõik raamatud listis on läbi käidud
+    //vaheta raamatute asukohad alati kui teine loop läbikäidud
+    raamatud[i], raamatud[v2ikseim] väärtusta vastupidises järjekorras, et esimesena oleks listis/riiulil väikseim raamat.
+
+tagasta raamatud 
+
+//Selleks, et eelpool loodud funktsioon midagi sorteerida saaks, peab tal olema ka mingisuguste raamatutega riiul, milledel on ka olemas kõrgused
+raamatud_riiulis = [30, 40, 10, 50, 14]
+
+//Teosta sorteerimine ja kuva sorteeritud riiulit
+Koodi lõpp:
