@@ -1,0 +1,39 @@
+Ülesanne 4
+
+a) Millistel eelmainitud (Bubble, Selection, Insertion sort) sortimisalgoritmidel on halvimal juhul ajakompleksus
+O(n^2)?
+Vastus: Kõigi kolme halvim juht on O(n^2)
+
+b) Milline sortimisalgoritm oleks kõige sobivam sortimaks loendit täisarvudega, mis
+jäävad vahemikku 1 kuni 100 ja miks?
+Vastus: Nendest kolmest oleks tõenäoliselt parim Insertion sort, sest arvude vahemik on määratud ja väga lühike. 
+Bubble ja Seletion teevad üldiselt palju rohkem samme kui selection ja sellise vahemiku puhul on ka tõenäoline, et osad numbrid on juba paigas
+
+
+Ülesanne 5
+
+a) Defineeri, mida tähendab, et sortimisalgoritm on "stabiilne." Anna näide stabiilsest
+sortimisalgoritmist antud loendist.
+Vastus: Sortimisalgoritm on stabiilne kui nt kaks objekti sama võtmega jäävad korrektsesse (samasse nagu alguses)
+järjekorda ka peale sortimist. Näiteks:
+(5,A),(3,B),(5,C),(2,D) -> (2,D),(3,B),(5,A),(5,C) võrdsete elementide "5" algne järjestus on säilinud.
+
+b) Selgita "adaptiivsuse" kontseptsiooni sortimisel. Millistest eelmainitud
+sortimisalgoritmidest peetakse adaptiivseks?
+Vastus: Adaptiivsus sortimisalgoritmi puhul tähendab, et algoritm kasutab ära loendis juba olemasolevat järjestust ja töötab kiiremini 
+kui loend on osaliselt sorteeritud.
+Insertion sort on adaptiivne, kuna see tuvastab osaliselt sorteeritud loendid ja töötab neil kiiremini kui täielikult 
+sorteerimata loendil.
+
+Boonus:
+
+Kuidas näeks loend [8, 3, 5, 4, 7, 6, 2] välja pärast esimest läbimist antud algoritmide
+puhul
+a) Bubble Sort
+Vastus: [3, 5, 4, 7, 6, 2, 8]
+b) Selection Sort
+Vastus: [2,8,5,4,7,6,3]
+c) Insertion Sort
+Vastus: [3, 8, 5, 4, 7, 6, 2]
+
+
