@@ -28,4 +28,4 @@ tagasta raamatud
 raamatud_riiulis = [30, 40, 10, 50, 14]
 
 //Teosta sorteerimine ja kuva sorteeritud riiulit
-Koodi lõpp:
+Koodi lõpp: kutsun välja algoritmi ja prindin selle välja
