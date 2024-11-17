@@ -1,0 +1,11 @@
+Sõna otsimine sõnaraamatust
+
+- Sõnaraamatus on üldiselt sõnad sorteeritud juba tähestikulisse järjekorda. 
+- Kasutaksin algoritmina Binary Searchi.
+
+- Binary Search jagab sõnaraamatu pooleks igal sammul ning see on kasulik, sest andmete maht üldiselt on suur.
+- Aegkompleksus O(logn) on palju efektsiivsem nt Linar Search O(n) iga
+
+Modifikatsioonina oleks mõistlik kasutada näiteks Binary Search puud
+Kui sõnastikku tuleb sageli lisada uusi sõnu, on Binary Search puu paindlikum kui staatiline massiiv.
+

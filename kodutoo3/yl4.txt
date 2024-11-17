@@ -1,0 +1,55 @@
+// 1. Kirjutage lühike ülevaade Ternary Search algoritmist, sealhulgas selle
+põhiprintsiibid ja pseudo-koodi näide.
+
+Vastus:
+Ternary Search on otsingualgoritm, mida kasutatakse sorteeritud massiividega. 
+Massiiv jagatakse kolmeks, otsides kahest piirmäärast lähtudes sobivat segmenti.
+Algoritmi tööpõhimõte on sarnane Binary Searchiga, kuid töötab lõigud mille kallal töötatakse on väiksemad.
+
+Põhiprintsiibid:
+1. Leiab kaks jagunemispunkti (indeksite abil)
+- keskmine1 = väikseim + (suurim - väikseim) / 3
+- keskmine2 = suurim - (suurim - väikseim) / 3
+
+2. Kontroll
+- Kui otsitav on arr[keskmine1], tagasta keskmine1
+- Kui otsitav on arr[keskmine2], tagasta keskmine2
+
+3. Kitsenda otsinguvahemikku
+- Kui otsitav on arr[keskmine1] < otsitav < arr[keskmine2], otsi nende vahelt
+- otsitav < arr[keskmine1], siis otsi vasakult
+- otsitav > arr[keskmine2], siis otsi paremalt
+
+4. Korda protsessi kuni otsitav leitud või kõik kontrollitud
+
+Põhiprintsiibid sisuliselt kirjeldasid ka olemuselt pseudokoodi jättes kirjeldamata täpselt otsinguvahemiku kitsendamise:
+
+Sisendid: arr (sorteeritud massiiv), target (otsitav väärtus), low (väikseim), high (suurim)
+1. Kui low > high, tagasta -1 (element puudub)
+2. Leia:
+   keskmine1 = low + (high - low) / 3
+   keskmine2 = high - (high - low) / 3
+3. Kui arr[keskmine1] == target, tagasta keskmine1
+4. Kui arr[keskmine2] == target, tagasta keskmine2
+5. Kui target < arr[keskmine1], otsi [low, keskmine1 - 1]
+6. Kui target > arr[keskmine2], otsi [keskmine2 + 1, high]
+7. Muidu otsi [keskmine1 + 1, keskmine2 - 1]
+
+// 2. Võrrelge Ternary Search'i ja Binary Search'i aegkomplekssust. (Kas mõõdetud
+tulemus, teoreetiline võrdlus, vms)
+
+Vastus:
+Binary Search jagab iga sammuga massiivi pooleks, seega iteratsioonide arv on log2n.
+Ternary Search jagab iga sammuga massiivi kolmeks, seega iteratsioonide arv on log3n.
+See tähendab, et Ternary vajab rohkem samme kui Binary
+
+// 3. Arutlege lühidalt, kas Binary Search on üldiselt tõhusam kui Ternary Search
+ning millistes olukordades.
+
+Vastus:
+Binary search teeb vähem iteratsioone ehk korduvaid tegevusi tänu sellele, et tema otsingupiirkond kitsendatakse kiiremini
+ning olemuselt on ka rakendus lihtsam tema ühe keskpunkti tõttu vs Ternary search millel on 2 keskpunkti. 
+Seega, Binary search on üldiselt tõhusam.
+
+Ternary võib olla kasulik ja asjakohane näiteks juhul kui on võimalik kasutada paralleelseid arvutusi. Hinnatakse
+mõlemat keskpunkti samaaegselt. Nõuab suuremat riistvaralist jõudlust, kuid võib olla kiirem.

@@ -1,0 +1,49 @@
+// 1. Kirjutage lühike ülevaade Jump Search algoritmist, sealhulgas selle
+põhiprintsiibid ja pseudo-koodi näide.
+
+Vastus:
+Jump Search töötab sorteeritud massiividel ning kombineerib Linear Search ja Binary Searchi meetodeid. 
+Liigub massiivis kindlate sammudega, et leida otsitava elemendi võimalik vahemik ning teostab siis vahemiku piires linear searchi.
+
+*Põhiprintsiibid:
+1. Massiiv jagatakse ligikaudu võrdseteks segmentideks pikkusega ruutjuur n, kus n on massiivi suurus.
+2. Algoritm "hüppab" segmentide kaupa, kuni leiab segmendi kuhu otsitav kuulub
+3. Pärast sobiva vahemiku leidmist teostatakse selles vahemikus Linear Search.
+
+*Pseudokood:
+
+Sisend: arr (sorteeritud massiiv), target (otsitav väärtus)
+1. Määra hüppe pikkus hüpe = sqrt(arr massiivi pikkus)
+2. Määra algindeksid:
+   - eelmineindeks = 0
+   - vaadeldavineks = min(hüpe, arr massiivi pikkus) - 1
+3. Tee hüppeid:
+   while arr[vaadeldavineks] < target and vaadeldavineks < arr massiivi pikkus:
+       eelmineindeks = vaadeldavineks
+       vaadeldavineks = min(vaadeldavineks + hüpe, arr massiivi pikkus) - 1
+4. Kui sihtväärtus on vahemikus (arr[eelmineindeks] <= target <= arr[vaadeldavineks]):
+   - Teosta Linear Search vahemikus [eelmineindeks, vaadeldavineks].
+5. Tagasta indeks või "Ei leitud", kui otsitavat ei leita.
+
+
+// 2. Võrrelge Jump Search'i ajalist komplekssust Linear Searchi ja Binary Searchiga.
+
+Vastus:
+Linear Search: Kontrollib igat elementi järjest. Keerukus O(n).
+Binary Search: Jagab massiivi pooleks igal sammul. Keerukus O(logn).
+Jump Search: Vähendab elementide kontrollimist hüpetega, mistõttu on halvim keerukus O(ruutjuur n)
+
+Seega on Jump Searchi ajaline keerukus kõvasti väiksem kui Linear või Binary Searchil
+
+// 3. Arutlege lühidalt stsenaariumide üle, kus Jump Search võib olla efektiivsem
+võrreldes Linear Searchi ja Binary Searchiga.
+
+Vastus:
+
+Positiivne:
+Madal mälukasutus: Jump Search ei vaja lisamälu, erinevalt mõnest teise keerukama algoritmi rakendustest (nt Binary Search rekursiivses vormis).
+Sorteeritud, kuid hajusate andmetega massiivid: Kui andmekogu on väga suur ja otsitavad väärtused on hajusalt esindatud, võimaldab Jump Search kiiresti kitsendada otsinguala.
+
+Negatiivne:
+Kui otsingut ei saa teha arvutustes otsest sorteerimisjärjestust kasutades (nt massiivile pole võimalik otse keskpunkti indekseid arvutada).
+Näiteks kui masiiv on sorteerimata kujul.
