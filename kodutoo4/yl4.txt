@@ -1,0 +1,28 @@
+1. Kirjuta lühike ülevaade avatud aadressimise meetodist kokkupõrgete
+lahendamisel räsimises.
+
+Vastus:
+Avatud aadressimine on kokkupõrgete lahendamise meetod räsitabelites, kus kõik elemendid salvestatakse otse massiivis. 
+Kui räsifunktsiooni tulemusel saadud indeks on juba hõivatud, leitakse uus vaba pesa massiivis vastavalt teatud sondimismeetodile.
+
+Põhiidee: Kõik elemendid salvestatakse samasse massiivi, ilma lisastruktuure (nt lingitud nimekirju) kasutamata.
+Kui uus element tuleb lisada, kasutatakse sondimismustrit, et leida järgmine vaba koht.
+Otsimisel ja kustutamisel järgneb sama sondimismuster, et säilitada andmete terviklikkus.
+
+2. Võrdle (teooria) kolme tehnikat: lineaarne otsing (linear probing), ruuduline
+otsing (quadratic probing) ja topelträsimine (double hashing).
+
+Vastus:
+* Lineaarne otsing - Sondimisel liigutakse fikseeritud sammu võrra edasi: index+1,index+2,….
+* Ruuduline otsing - Sondimiskaugus suureneb ruuduliselt: index+1^2,index+2^2,….
+* Topelträsimine - Kasutab kahte sõltumatut räsifunktsiooni: index+i⋅h2(key), kus h2(key) != 0
+
+
+3. Aruta, millistes olukordades iga tehnika oleks kõige efektiivsem.
+
+Vastus:
+
+Kõige lihtsam neist kolmest on rakendada lineaarset otsingut. See sobib hästi väikeste ja hõredalt täidetud tabelite puhul. Näiteks kui tabel täidetakse osaliselt ja võtmeid on vähe.
+Ruuduline otsingul on sobiva tabeli suuruse korral klastreid vähem kui lineaarsel ning see sobib hästi juhul kui nii tabeli suurus kui võtmete arv on hästi prognoositavad ja arvutusi saab optimeerida
+Topelträsimine on aga parim lahendus kokkupõrgete minimeerimiseks, kuna teise räsifunktsiooni abil hajutatakse võtmed ühtlasemalt. Klastreid on vähem kui lineaarsel ja ruudulisel otsingul. 
+Sobib suurte tabelite jaoks või rakendustes, kus võtmeid lisatakse tihedalt ja kokkupõrkeid tuleb võimalikult palju vältida

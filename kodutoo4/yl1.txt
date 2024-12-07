@@ -1,0 +1,38 @@
+// 1. Kirjuta selgitus räsimise (hashing) kontseptsioonist - põhiidee ja eesmärk.
+
+Põhiidee: Räsifunktsioon määrab sisendile unikaalse arvväärtuse, mis toimib indeksi või võtmena andmeobjektide kiireks leidmiseks andmestruktuurides, nagu räsitabel (hash table).
+Eesmärk: Optimeerida otsinguprotsessi, vähendada mälu kasutust ja tagada andmete tõhus haldamine. Näiteks kasutatakse räsimist sõnastike, paroolide ja kontrollsummade loomiseks.
+
+
+// 2. Kirjelda hea räsifunktsiooni omadusi ja selgita, miks need on olulised.
+
+1. Deterministlikkus ehk Ssma sisend tekitab alati sama räsi.
+Oluline kindluse loomiseks. Järjepidevus ja usaldus.
+
+2. Räsifunktsioon peab olema kiire arvutada.
+Oluline reaalajas töötlemisel ja suurte andmekogumite puhul.
+
+3. Räsi väärtused jaotuvad ühtlaselt, et vähendada kokkupõrkeid.
+Aitab vältida klastrite moodustumist ja parandab jõudlust.
+
+4. Minimaalne kokkupõrgete arv: Väga erinevad sisendid peaksid genereerima erinevad räsid.
+Oluline on vältida olukordi, kus kaks või enam võtmeväärtust jagavad sama indeksit ning nende tõlgendamine võib tekitada valesid olukordi
+
+5. Eelnevate andmete sõltumatus: Väike muutus sisendis (nt ühe tähe muutus) peaks tooma kaasa suure muutuse räsi väärtuses.
+Oluline turvalisuse ja andmete sidususe tagamiseks.
+
+//3. Selgita kokkupõrgete lahendamise tehnikaid, eriti eraldi aheldamist (separate
+chaining) ja avatud aadressimist (open addressing).
+
+Kokkupõrge tekib, kui kaks erinevat sisendit genereerivad sama räsi väärtuse ja minnakse samasse indeksisse räsitabelis. 
+
+*Eraldi aheldamine (separate chaining)
+Põhimõte: Iga räsitabeli pesa salvestab andmeid eraldi andmestruktuuris, tavaliselt linked listis.
+Kui mitu elementi jagavad sama indeksit, salvestatakse need ühte lingitud nimekirja. Otsing, lisamine ja kustutamine toimuvad nimekirjas.
+
+*Avatud aadressimine (open addressing)
+Põhimõte: Kõik elemendid salvestatakse otse räsitabelisse ning kokkupõrkel otsitakse tabelist järgmine sobiv vaba pesa.
+
+*Eraldi aheldamine on paindlikum dünaamilistes süsteemides. 
+Avatud aadressimine sobib hästi tabelite jaoks kus suurus on ette teada.
+
