@@ -1,0 +1,27 @@
+Ülesanne 5: AVL Puu vs. Punase-Musta Puu Teoreetiline Võrdlus
+
+1. Kirjelda AVL puu andmestruktuuri ja selle peamisi omadusi.
+
+Vastus:
+AVL puu on tasakaalustatud binaarne otsingupuu, mille peamiseks omadus on see, et iga sõlme vasaku ja parema alampuu kõrguse erinevus ei ole kunagi suurem kui üks. 
+Tänu sellele on AVL puu alati hästi tasakaalus, mis tagab, et selle operatsioonid toimivad alati ajaga O(log n).
+
+2. Võrdle teoreetiliselt AVL puu ja punase-musta puu tõhusust.
+
+Vastus:
+
+AVL puud on tasakaalustatumad kui punase-musta puud, sest AVL puu kõrgus on madalam. 
+Selle tulemusena võivad AVL puu otsinguoperatsioonid olla kiiremad, kuna elementidele pääseb ligi vähemate sammudega. 
+Punase-musta puu tasakaalustamise reeglid on leebemad, mistõttu lisamise ja kustutamise operatsioonid on seal üldiselt kiiremad, tehakse vähem pöördeid. 
+Praktikas on mõlemad puutüübid töökiiruse poolest üsna lähedased. 
+AVL puu sobib paremini olukordadesse, kus otsingute efektiivsus on prioriteet. 
+Punase-musta puu on tõhusam kui lisamisi ja kustutamisi tehakse tihti.
+
+3. Analüüsi, millistes rakendustes oleks üks struktuur teisele eelistatav ja põhjenda oma valikuid.
+
+Vastus:
+
+AVL puud sobivad hästi rakendustesse, kus otsingud on väga sagedased ja olulised. Näiteks andmebaasid.
+Kuna AVL puu tagab alati parima võimaliku otsingukiiruse tänu oma rangemale tasakaaluhoidmisele, on see ideaalne olukordades, kus andmed jäävad pärast algset sisestamist suhteliselt staatiliseks. 
+Punase-musta puud on aga paremad rakendustes, kus toimub sagedane andmete lisamine ja kustutamine. Näiteks prioriteetjärjekorrad või dünaamilised andmestruktuurid.
+Punase-musta puu tasakaalustamine on kiirem ja vähem ressursimahukas.

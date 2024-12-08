@@ -1,0 +1,56 @@
+Ülesanne 2: Kuhja (Heap) Struktuuri Teoreetiline Analüüs
+
+1. Kirjelda min-kuhja ja max-kuhja struktuuride teoreetilisi omadusi.
+
+Vastus: 
+Kuhja struktuur (heap) on täielik kahendpuu ning rahuldab kuhja omadusi:
+Min-kuhja puhul on vanem alati väiksem või võrdne lastega. Juureks on alati puu kõige väiksem väärtus.
+Max-kuhja puhul on vanem alati suurem või võrdne lastega. Juures on alati puu kõige suurem väärtus.
+
+Kuhjas on igal tasemel (v.a viimasel) sõlmed täielikult täidetud.
+Viimase taseme sõlmed on paigutatud vasakult paremale järjest.
+Kuhja saab efektiivselt esitada massiivina, kus 
+vanema indeks = i
+Vasakpoolne laps(child) = 2i + 1
+Parempoolne laps(child) = 2i + 2
+Vanem = (i - 1) // 2
+
+
+2.  Analüüsi nende struktuuride aja- ja ruumikomplekssust.
+
+Vastus:
+Kui sisend on suvalises järjekorras, saab ehitamise algoritmi teha O(n) aja jooksul.
+Suuremahuliste operatsioonide keerukus sõltub puu tasemetest.
+
+Elemendi lisamine kuhja:
+Uus element lisatakse massiivi lõppu ja tõstetakse üles(bubble up). Sellise tegevuse ajakulu on O(log n).
+
+Minimaalse/maksimaalse elemendi eemaldamine:
+Juure eemaldamine ja viimase elemendi tõstmine juureks ajakulu on O(log n).
+
+Kuhja otsing (search):
+Kuhja omaduste tõttu on efektiivne ainult juure juures olevate väärtuste saamine (O(1)).
+Üldise otsingu jaoks on vaja kogu puu läbi käia (O(n)).
+
+Ruumikompleksus:
+Kuhja struktuur kasutab O(n) ruumi, kus n on elementide arv.
+
+
+3. Aruta, kuidas kuhja struktuurid sobivad andmete sorteerimiseks ja prioriteetjärjekordade haldamiseks.
+
+Vastus:
+Kuhja abil saab andmeid sorteerida optimaalsel meetodil - kuhjasortimine (heapsort).
+
+Kuhjasortimise mõte on lihtne:
+Ehitad kuhja, kus suurim või väikseim element on alati tipus.
+Seejärel eemaldad selle tipu (kõrgeima prioriteediga elemendi) ja lisad selle sorteeritud nimekirja.
+Kordad, kuni kõik elemendid on sorteeritud.
+
+Prioriteetjärjekordade haldamiseks on kuhjad hea lahendus, sest nad on nagu järjekorrad, kus kõige tähtsamad (või kõrgeima prioriteediga) asjad käsitletakse alati esimesena.
+Saad kiiresti teada, kes on tipus (kõige suurema või väiksema väärtusega element).
+Saad tipu kiiresti eemaldada ja kuhja uuesti korraldada
+Lisamine kuhja on kiire
+
+Kuhjasort on kiire ja mälutõhus. See sobib eriti hästi suurte andmete sorteerimiseks, kui pole vaja pidevat uuesti sortimist.
+Kuhjad tagavad, et kõige olulisemad asjad käsitletakse alati esimesena. See on kiire ja usaldusväärne lahendus paljude reaalmaailma probleemide lahendamiseks.
+Kuhjad ei pruugi olla igas olukorras kõige kiirem lahendus, aga nende lihtsus ja efektiivsus teevad neist hea ja universaalse tööriista.

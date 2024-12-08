@@ -1,0 +1,33 @@
+Ülesanne 3: Binaarse Otsingupuu (Binary Search Tree, BST). Teoreetiline analüüs.
+
+1. Kirjelda binaarse otsingupuu (BST) andmestruktuuri ja selle põhielemente.
+
+Vastus:
+
+Binaarne otsingupuu (BST) on sõlmede hierarhiline andmestruktuur, mis järgib järgmisi omadusi:
+Kõik vasaku alampuu väärtused on väiksemad kui sõlme väärtus.
+Kõik parema alampuu väärtused on suuremad kui sõlme väärtus.
+Sõlmedel ei tohi olla duplikaatväärtusi. Sellegipoolest on osades variantides duplikaadid lubatud.
+
+Struktuuri põhielemendid:
+Sõlm (Node): Sisaldab andmeväärtust ja viitasid kahele alampuule (vasak ja parem).
+Juursõlm (Root): Puuhierarhia tipp, millel puudub vanem, temast üleval pole rohkem ühtegi elementi.
+Lehesõlm: Sõlm, millel pole lapsi (vasak ja parem viide on null või None e. puudub).
+Kõrgus (Height): Puu sügavus ehk pikim tee juurest leheni.
+
+Iga alampuu on ise BST, kui see rahuldab BST omadusi.
+
+2. Arutle, kuidas tasakaalustamata puud mõjutavad BST tõhusust ja kuidas seda
+saab teoreetiliselt optimeerida.
+
+
+Vastus:
+
+Tasakaalustamata binaarsed otsingupuud muutuvad vähem tõhusaks, kuna nende töökiirus aeglustub O(log n) asemel O(n)-ni. 
+See juhtub, kui puu muutub ühepoolseks, näiteks järjestatud andmete lisamisel, ja hakkab meenutama lihtsat loendit. 
+Selle tulemusel muutuvad otsingud, lisamised ja kustutamised palju aeglasemaks, eriti suurte andmekogumite korral.
+
+Probleemi lahendamiseks kasutatakse tasakaalustatud puid, nagu AVL- ja punane-must-puud, mis korrigeerivad automaatselt puu struktuuri iga lisamise või kustutamise käigus. 
+Need mehhanismid tagavad, et töökiirus püsib alati O(log n) piires. 
+Alternatiivina võib kasutada perioodilist ümberkujundamist, et hoida puu vähemalt osaliselt tasakaalus. 
+Need meetodid aitavad vältida tasakaalustamatuse mõju, muutes puu praktiliseks ja tõhusaks ka keerukamates rakendustes.

@@ -1,0 +1,24 @@
+Ülesanne 4: Punase-Musta Puu (Red-Black Tree). Teoreetiline ülevaade.
+
+1. Kirjelda punase-musta puu andmestruktuuri ja selle peamisi omadusi.
+
+Vastus:
+Punase-musta puu andmestruktuur on binaarse otsingupuu erivorm, millel on lisatud reeglid, et hoida puu alati tasakaalus. 
+Igal sõlmel on lisaks andmeväärtusele ka värv, mis võib olla kas punane või must. 
+Puu peamised omadused hõlmavad järgmist: juur on alati must, igal teel juurest leheni on sama arv musti sõlmi ning punasel sõlmel ei tohi olla punaseid lapsi. 
+Need omadused aitavad hoida puu tasakaalus, et selle kõrgus ei muutuks liiga suureks.
+
+2. Võrdle teoreetiliselt punase-musta puu ja binaarse otsingupuu tõhusust.
+
+Vastus:
+Kui võrrelda punase-musta puud ja tavalist binaarset otsingupuud, siis mõlemad toetavad operatsioone nagu otsimine, lisamine ja kustutamine keskmise ajaga O(log n). 
+Siiski on tavalise binaarse otsingupuu puhul oht, et kui see muutub tasakaalustamata, võib operatsioonide aeg halvimal juhul ulatuda O(n)-ni. 
+Punase-musta puu tasakaalustamisreeglid tagavad, et halvim võimalik tööaeg on alati O(log n), mis muudab selle efektiivsemaks suurte andmekogumite puhul.
+
+3. Aruta, kuidas punase-musta puu tasakaalustamine ja värvireeglid aitavad kaasa andmestruktuuri tõhususele.
+
+Vastus:
+Punase-musta puu tasakaalustamine toimub värvireeglite ja pööramiste kaudu. 
+Kui sõlm lisatakse või kustutatakse ja reeglid saavad rikutud, teeb puu vajalikke värvimuutusi ja pöördeid, et taastada tasakaal. 
+Tänu sellele ei kasva puu kõrgus liiga suureks, mis tähendab, et andmetele pääseb ligi kiiresti ja ühtlaselt. 
+Värvireeglid ja tasakaalustamine lisavad küll väikese lisakulu, kuid hoiavad kogu andmestruktuuri töökindla ja tõhusana.
